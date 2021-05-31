@@ -33,7 +33,7 @@ const Admin = () => {
 
     // 获取数据
     const { data, error } = useSWR(
-      "https://node.ouorz.com/getAllCates",
+      "https://odraw.snapaper.com/getAllCates",
       (url) =>
         axios({
           method: "get",
@@ -51,7 +51,7 @@ const Admin = () => {
       if (nowKey) {
         axios({
           method: "post",
-          url: "https://node.ouorz.com/setCateKey",
+          url: "https://odraw.snapaper.com/setCateKey",
           data: Qs.stringify({
             name: nowCate,
             type: nowType,
@@ -63,7 +63,7 @@ const Admin = () => {
         })
           .then((res) => {
             if (res.data.code === 104) {
-              mutate("https://node.ouorz.com/getAllCates");
+              mutate("https://odraw.snapaper.com/getAllCates");
               setModalStatus(false);
             }
           })
@@ -81,7 +81,7 @@ const Admin = () => {
         setDrawModalStatus(true);
         axios({
           method: "post",
-          url: "https://node.ouorz.com/drawRecordsByCate",
+          url: "https://odraw.snapaper.com/drawRecordsByCate",
           data: Qs.stringify({
             name: cate,
             type: type,
@@ -92,7 +92,7 @@ const Admin = () => {
         })
           .then((res) => {
             if (res.data.code === 104) {
-              mutate("https://node.ouorz.com/getAllCates");
+              mutate("https://odraw.snapaper.com/getAllCates");
               setDrawModalStatus(false);
             }
           })
@@ -108,14 +108,14 @@ const Admin = () => {
     const alterStatus = () => {
       axios({
         method: "post",
-        url: "https://node.ouorz.com/stopViewingDraw",
+        url: "https://odraw.snapaper.com/stopViewingDraw",
         headers: {
           Authorization: JWTToken,
         },
       })
         .then((res) => {
           if (res.data.code === 105) {
-            mutate("https://node.ouorz.com/getAllCates");
+            mutate("https://odraw.snapaper.com/getAllCates");
           }
         })
         .catch((err) => {
@@ -135,7 +135,7 @@ const Admin = () => {
     const postChangePwd = () => {
       axios({
         method: "post",
-        url: "https://node.ouorz.com/userModify",
+        url: "https://odraw.snapaper.com/userModify",
         data: Qs.stringify({
           username: currentUserName,
           password: oldPwd,
@@ -161,7 +161,7 @@ const Admin = () => {
       if (status) {
         axios({
           method: "post",
-          url: "https://node.ouorz.com/exportExcel",
+          url: "https://odraw.snapaper.com/exportExcel",
           data: Qs.stringify({
             name: name,
             type: type,
@@ -175,7 +175,7 @@ const Admin = () => {
               // 新窗口下载文件
               if (typeof document !== "undefined") {
                 const url =
-                  "https://node.ouorz.com/files/download/" +
+                  "https://odraw.snapaper.com/files/download/" +
                   res.data.file +
                   ".xlsx";
                 let a = document.createElement("a");
@@ -200,7 +200,7 @@ const Admin = () => {
     const recordsProps = {
       accept: ".xlsx",
       name: "recordsExcel",
-      action: "https://node.ouorz.com/uploadRecords",
+      action: "https://odraw.snapaper.com/uploadRecords",
       headers: {
         Authorization: JWTToken,
       },
@@ -208,7 +208,7 @@ const Admin = () => {
     const usersProps = {
       accept: ".xlsx",
       name: "usersExcel",
-      action: "https://node.ouorz.com/uploadUsers",
+      action: "https://odraw.snapaper.com/uploadUsers",
       headers: {
         Authorization: JWTToken,
       },
@@ -220,24 +220,13 @@ const Admin = () => {
 
     return (
       <div className="odraw-container">
-        {error ? (
-          <Result
-            status="500"
-            title="500"
-            subTitle="数据请求错误"
-            extra={
-              <Link href="/login">
-                <Button type="primary">重新登录</Button>
-              </Link>
-            }
-          />
-        ) : !data || loadingStatus ? (
+        {!error && (!data || loadingStatus) ? (
           <div className="odraw-container-loading">
             <Skeleton active />
             <Skeleton active />
             <Skeleton active />
           </div>
-        ) : data.length > 1 ? (
+        ) : !error && data.length > 1 ? (
           <div>
             <div className="odraw-container-top">
               <div className="odraw-container-top-div">
@@ -422,7 +411,7 @@ const Admin = () => {
               ) : menuItem === 2 ? (
                 <div>
                   <p className="odraw-container-pwd-notice">
-                    管理员账户初始密码为 666666，请<b>务必</b>及时修改
+                    管理员账户初始密码为 odrawPwd，请<b>务必</b>及时修改
                   </p>
                   <div className="odraw-container-pwd-input">
                     <Input

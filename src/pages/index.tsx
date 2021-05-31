@@ -43,7 +43,7 @@ const Index = () => {
 
     // 获取数据
     const { data, error } = useSWR(
-      "https://node.ouorz.com/getRecordsBySchool?" +
+      "https://odraw.snapaper.com/getRecordsBySchool?" +
         Qs.stringify({
           name: currentUserName,
         }),
@@ -83,7 +83,7 @@ const Index = () => {
       setDrawLoading(true);
       axios({
         method: "post",
-        url: "https://node.ouorz.com/viewProjectDraw",
+        url: "https://odraw.snapaper.com/viewProjectDraw",
         data: Qs.stringify({
           cate: drawViewCate,
           type: drawViewType,
@@ -100,7 +100,7 @@ const Index = () => {
               setDrawLoading(false);
               setNowDrawNumber(res.data.draw);
               mutate(
-                "https://node.ouorz.com/getRecordsBySchool?" +
+                "https://odraw.snapaper.com/getRecordsBySchool?" +
                   Qs.stringify({
                     name: currentUserName,
                   })
@@ -127,7 +127,7 @@ const Index = () => {
     const postChangePwd = () => {
       axios({
         method: "post",
-        url: "https://node.ouorz.com/userModify",
+        url: "https://odraw.snapaper.com/userModify",
         data: Qs.stringify({
           username: currentUserName,
           password: oldPwd,
@@ -159,7 +159,7 @@ const Index = () => {
       <div>
         <div className="odraw-container">
           <div className="odraw-container-stupid-banner">
-            <img src="https://static.ouorz.com/odraw_match_banner.jpg" />
+            <img src="https://static.ouorz.com/WechatIMG1019.jpeg" />
           </div>
           {error ? (
             <div>

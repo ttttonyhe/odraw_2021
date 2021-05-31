@@ -27,7 +27,7 @@ const Login = (contextProps) => {
     setLoginStatus(true);
     axios
       .post(
-        "https://node.ouorz.com/userLogin",
+        "https://odraw.snapaper.com/userLogin",
         Qs.stringify({
           username: userName,
           password: passWord,
@@ -65,7 +65,7 @@ const Login = (contextProps) => {
               &nbsp;&nbsp;提示
             </h2>
             <p>
-              欢迎使用第九届「挑战杯·中国联通」安徽省大学生创业计划竞赛抽签平台。用户名与初始密码已经发布。
+              欢迎使用第九届“挑战杯·中国联通”安徽省大学生课外学术科技作品竞赛抽签平台。用户名与初始密码已经发布。
               <br />
               <br />
               请切换并使用<b> Chrome/极速内核 </b>使用本平台。
@@ -77,7 +77,7 @@ const Login = (contextProps) => {
         </div>
         <div className="odraw-login-form">
           <h2>账户登录</h2>
-          <p>第九届「挑战杯·中国联通」安徽省大学生创业计划竞赛</p>
+          <p>第九届“挑战杯·中国联通”安徽省大学生课外学术科技作品竞赛</p>
           <div className="odraw-login-input-div">
             <div>
               <Input

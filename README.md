@@ -1,11 +1,7 @@
 ## ODraw
-第九届「挑战杯·中国联通」安徽省大学生创业计划竞赛抽签平台前端
+第十届「挑战杯·中国联通」安徽省大学生创业计划竞赛抽签平台前端
 
 ![thumbnail](https://i.loli.net/2020/08/30/BJqDwFveozt7L2l.png)
-
-<br/>
-
-`master` branch looks like shit, see the true project at `main` branch
 
 <br/>
 
@@ -38,7 +34,7 @@
 <br/>
 
 ### 赞助
-Your name will be on the list [Donation](https://www.ouorz.com/donation)
+Your name will be on the list [Sponsors](https://www.ouorz.com/sponsor)
 <br/>
 
 ![Donate](https://i.loli.net/2019/02/18/5c6a80afd1e26.png)

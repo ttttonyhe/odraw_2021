@@ -25,6 +25,8 @@ body {
   background: #ffffff;
   height: 65px;
   .odraw-header-logo {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     margin: 0 auto;
     @media screen and (min-width: 1024px) {
@@ -32,7 +34,7 @@ body {
     }
     img {
       width: 250px;
-      margin-top: 1px;
+      margin-top: -2px;
       margin-right: 20px;
     }
   }

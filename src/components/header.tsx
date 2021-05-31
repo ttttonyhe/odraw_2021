@@ -19,11 +19,11 @@ const Header = ({ router }) => {
   return (
     <div className="odraw-header-div">
       <Head>
-        <title>第九届「挑战杯·中国联通」安徽省大学生创业计划竞赛抽签平台</title>
+        <title>第九届“挑战杯·中国联通”安徽省大学生课外学术科技作品竞赛</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="shortcut icon"
-          href="https://static.ouorz.com/odraw_ico.ico"
+          href="favicon.ico"
           id="favicon"
           type="image/vnd.microsoft.icon"
         />
@@ -38,7 +38,7 @@ const Header = ({ router }) => {
       </Head>
       <Link href="/">
         <div className="odraw-header-logo">
-          <img src="https://static.ouorz.com/match_logo.png" />
+          <img src="https://static.ouorz.com/WechatIMG1020.png" />
         </div>
       </Link>
       <div className="odraw-header-title">
