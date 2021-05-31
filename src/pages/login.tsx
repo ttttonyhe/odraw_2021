@@ -72,7 +72,7 @@ const Login = (contextProps) => {
             </p>
           </div>
           <div className="odraw-login-notice-copyright">
-            <p>安徽工程大学团委</p>
+            <p>共青团安庆师范大学委员会</p>
           </div>
         </div>
         <div className="odraw-login-form">
