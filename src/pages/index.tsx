@@ -186,7 +186,6 @@ const Index = () => {
                 <div className="odraw-container-top-div">
                   <div className="odraw-container-top-info">
                     <h1>{currentUserName}</h1>
-                    <p>{data[2].schoolType}组</p>
                   </div>
                   <div className="odraw-container-top-card">
                     <div className="odraw-container-top-card-inside">
@@ -250,10 +249,6 @@ const Index = () => {
                           <tr>
                             <td>所属学校</td>
                             <td>{drawViewSchool}</td>
-                          </tr>
-                          <tr>
-                            <td>学校类型</td>
-                            <td>{drawViewType}</td>
                           </tr>
                         </table>
                       </div>

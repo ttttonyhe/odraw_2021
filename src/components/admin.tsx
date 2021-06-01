@@ -232,7 +232,7 @@ const Admin = () => {
               <div className="odraw-container-top-div">
                 <div className="odraw-container-top-info">
                   <h1>管理员面板</h1>
-                  <p>抽奖平台管理员面板</p>
+                  <p>抽签平台管理员面板</p>
                 </div>
                 <div className="odraw-container-top-admin-stop">
                   <Button
